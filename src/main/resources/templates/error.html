@@ -2,8 +2,11 @@
 
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'error')}">
 
+  <head>
+    <title>Some relevant title</title>
+  </head>
   <body>
-    <img src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
+    <img src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}" alt="default text"/>
     <h2>Something happened...</h2>
     <p th:text="${message}">Exception message</p>
   </body>

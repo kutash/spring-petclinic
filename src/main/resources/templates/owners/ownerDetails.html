@@ -3,9 +3,9 @@
 <html xmlns:th="https://www.thymeleaf.org"
   th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 
-<head>
-  <title>Some relevant title</title>
-</head>
+  <head>
+    <title>Some relevant title</title>
+  </head>
   <body>
   
   
@@ -15,7 +15,7 @@
     <table class="table table-striped" th:object="${owner}">
       <tr>
         <th>Name</th>
-        <td><b th:text="*{firstName + ' ' + lastName}"></b></td>
+        <td><strong th:text="*{firstName + ' ' + lastName}"></strong></td>
       </tr>
       <tr>
         <th>Address</th>
@@ -48,10 +48,14 @@
           <dl class="dl-horizontal">
             <dt>Name</dt>
             <dd th:text="${pet.name}" /></dd>
-            <dt>Birth Date</dt>
+            <dl>
+              <dt>Birth Date</dt>
+            </dl>
             <dd
               th:text="${#temporals.format(pet.birthDate, 'yyyy-MM-dd')}" /></dd>
-            <dt>Type</dt>
+            <dl>
+              <dt>Type</dt>
+            </dl>
             <dd th:text="${pet.type}" /></dd>
           </dl>
         </td>
